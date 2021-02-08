@@ -11,18 +11,18 @@ contract('MetaCoin', function(accounts) {
   it("should call a function that depends on a linked library", function() {
     var meta;
     var metaCoinBalance;
-    var metaCoinEthBalance;
+    var metaCoinVapBalance;
 
     return MetaCoin.deployed().then(function(instance) {
       meta = instance;
       return meta.getBalance.call(accounts[0]);
     }).then(function(outCoinBalance) {
       metaCoinBalance = parseInt(outCoinBalance);
-      return meta.getBalanceInEth.call(accounts[0]);
-    }).then(function(outCoinBalanceEth) {
-      metaCoinEthBalance = parseInt(outCoinBalanceEth);
+      return meta.getBalanceInVap.call(accounts[0]);
+    }).then(function(outCoinBalanceVap) {
+      metaCoinVapBalance = parseInt(outCoinBalanceVap);
     }).then(function() {
-      assert.equal(metaCoinEthBalance, 2 * metaCoinBalance, "Library function returned unexpected function, linkage may be broken");
+      assert.equal(metaCoinVapBalance, 2 * metaCoinBalance, "Library function returned unexpected function, linkage may be broken");
     });
   });
   it("should send coin correctly", function() {

@@ -24,7 +24,7 @@ contract MetaCoin {
 		return true;
 	}
 
-	function getBalanceInEth(address addr) public view returns(uint){
+	function getBalanceInVap(address addr) public view returns(uint){
 		return ConvertLib.convert(getBalance(addr),2);
 	}
 

@@ -1,7 +1,7 @@
 pragma solidity >=0.4.22 <0.6.0;
 
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
+import "moxie/Assert.sol";
+import "moxie/DeployedAddresses.sol";
 import "../contracts/MetaCoin.sol";
 
 contract TestMetacoin {
